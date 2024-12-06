@@ -1,0 +1,44 @@
+/**
+ * Curso de JavaScript: Conhecendo arrays
+ * Array Multimensional - Matriz
+ * Apoio:
+ * https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+ * @public
+ * @author Diego Mendes Rodrigues
+ */
+// Cabeçalho
+console.log("-".repeat(35),
+    "\nArray Multimensional - Matriz",
+    "\n" + "-".repeat(35))
+
+const alunos = ['Diego', 'Regina', 'Bruna']
+const medias = [9, 8.3, 9.3]
+
+// Criar um array multimensional (matriz)
+const escola = [alunos, medias]
+console.log(escola)
+console.log('-')
+
+console.log(`O aluno ${escola[0][0]} possui a média ${escola[1][0].toFixed(2)}`)
+console.log(`O aluno ${escola[0][1]} possui a média ${escola[1][1].toFixed(2)}`)
+console.log(`O aluno ${escola[0][2]} possui a média ${escola[1][2].toFixed(2)}`)
+console.log('-')
+
+// Utilizar laços de repetições para exibir a matriz
+for (let coluna = 0; coluna < 3; coluna++) {
+    let mensagem = 'Aluno = '
+    for (let linha = 0; linha < 2; linha++) {
+        if (linha === 0) {
+            mensagem += escola[linha][coluna]
+        } else {
+            mensagem += ' || Média = ' + escola[linha][coluna].toFixed(2)
+        }
+    }
+    console.log(mensagem)
+}
+console.log('-')
+
+// Outra forma de criar uma matriz
+const funcionarios = [['Ana', 'Nayara'], [50, 25]]
+console.log(funcionarios[0][0], funcionarios[1][0])
+console.log(funcionarios[0][1], funcionarios[1][1])
